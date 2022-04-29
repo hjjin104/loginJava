@@ -1,4 +1,2 @@
-package hello.login.logintest.web;
-
-public class item {
+package hello.login.logintest.web;public class item {
 }
