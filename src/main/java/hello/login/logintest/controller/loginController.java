@@ -50,4 +50,9 @@ public class loginController {
         return "redirect:/";
     }
 
+    public String logout(HttpServletResponse response){
+        expireCookie(response, "memberId");
+        return "redirect:/";
+    }
+
 }
