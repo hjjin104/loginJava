@@ -8,19 +8,11 @@ import javax.validation.constraints.NotBlank;
 public class Member {
     private Long id;
     @NotBlank
-    private String userId;
+    private String loginId;
     @NotBlank
-    private String userPassword;
+    private String password;
 
-    private String userName;
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+    private String name;
 
     public Long getId() {
         return id;
@@ -30,19 +22,27 @@ public class Member {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getLoginId() {
+        return loginId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setLoginId(String loginId) {
+        this.loginId = loginId;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

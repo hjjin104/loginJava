@@ -36,12 +36,13 @@ public class loginController {
         if(bindingResult.hasErrors()){
             return "login/loginForm";
         }
-        Member loginMember = loginService.login(form.getLoginId(), form.getLoginPassword());
+        Member loginMember = loginService.login(form.getLoginId(), form.getLoginPassword()); //loginForm에 들어온 loginId와 loginPassword값
         log.info("login? {}", loginMember);
         if(loginMember == null){
             bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");
             return "login/loginForm";
         }
+        //로그인 성공처리
 
         //쿠키에 시간 정보를 주지 않으면 세션 쿠키(브라우저 종료시 모두 종료)
         Cookie idCookie = new Cookie("memberId", String.valueOf(loginMember.getId()));
@@ -146,5 +147,9 @@ public class loginController {
         Cookie cookie = new Cookie(cookieName, null);
         cookie.setMaxAge(0);
         response.addCookie(cookie);
+    }
+
+    public static class SessionConst{
+        public static final String LOGIN_MEMBER = "loginMember";
     }
 }

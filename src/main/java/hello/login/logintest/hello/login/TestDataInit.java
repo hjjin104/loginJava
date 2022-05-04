@@ -12,18 +12,18 @@ import javax.annotation.PostConstruct;
 @RequiredArgsConstructor
 public class TestDataInit {
 
-    private final ItemRepository itemRepository;
+//    private final ItemRepository itemRepository;
     private final memberRepository memberRepository;
 
     @PostConstruct
     public void init(){
-        itemRepository.save(new Item("itemA", 1000, 10));
-        itemRepository.save(new Item("itemB", 20000, 20));
+//        itemRepository.save(new Item("itemA", 1000, 10));
+//        itemRepository.save(new Item("itemB", 20000, 20));
 
         Member member = new Member();
-        member.setUserId("test");
-        member.setUserPassword("test!");
-        member.setUserName("테스터");
+        member.setLoginId("test");
+        member.setPassword("test!");
+        member.setName("테스터");
 
         memberRepository.save(member);
     }
